@@ -169,7 +169,7 @@ class ReportController extends Controller
     public function downloadPdf($id)
     {
         $report = MonthlyReport::findOrFail($id);
-        $pdf = PDF::loadView('reports.pdf', compact('report'));
+        $pdf = PDF::loadView('reports.pdf2', compact('report'));
 
         // Ensure directory exists
         $directoryPath = storage_path('app/public/invoices');
@@ -193,7 +193,6 @@ class ReportController extends Controller
         try {
             exec($command, $output, $status);
             if ($status === 0) {
-
                 return redirect()->route('home')->with('success', 'Monthly Report printed successfully.');
             } else {
                 return redirect()->route('home')->with('error', 'Failed to print. Check printer configuration.');
