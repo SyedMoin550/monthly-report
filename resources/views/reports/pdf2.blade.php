@@ -104,7 +104,7 @@
                     <tr>
                         <td>{{ $report->sr_number ?? '' }}</td>
                         <td>{{ $report->client ?? '' }}</td>
-                        <td>{{ \Carbon\Carbon::parse($report->created_at)->format('l d F Y') ?? ''}}</td>
+                        <td>{{ \Carbon\Carbon::parse($report->created_at)->format('d/m/Y') ?? '' }}</td>
                         <td>{{ $report->manifest ?? ''}}</td>
                         <td>{{ $report->minimum_weight ?? ''}}</td>
                     </tr>
