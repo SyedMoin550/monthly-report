@@ -46,7 +46,7 @@
         .logo {
             text-align: center;
 
-            height: 50px;
+            height: 65px;
             text-align: center;
             display: flex;
             justify-content: center;
@@ -54,7 +54,7 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 65px;
             max-width: 100px;
         }
 
@@ -62,12 +62,12 @@
             text-align: center;
             display: flex;
             justify-content: center;
-            height: 50px;
+            height: 65px;
             align-items: center;
         }
 
         .logo22 img {
-            height: 50px;
+            height: 65px;
             width: auto;
             max-width: 100%;
             object-fit: contain;
@@ -79,7 +79,7 @@
 </head>
 
 <body>
-    <a href="#" class="" id="print-invoice" style="visibility: hidden">print</a>
+    <a href="#" class="" id="print-invoice" style="visibility: hidden"></a>
 
     <div class="invoice-container" id="invoice-container">
         <div style="overflow-x: auto">
@@ -274,7 +274,7 @@
                 // Print the content
                 printWindow.print();
 
-                // Close the window after printing (optional)
+                // Close the window after printing
                 printWindow.onafterprint = function() {
                     printWindow.close();
                 };
