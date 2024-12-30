@@ -182,7 +182,7 @@ class ReportController extends Controller
         $pdf->save($path);
 
         // Printer setup
-        $printerName = "EPSON_LX_310";
+        $printerName = "EPSON_LQ_350";
         // for linux use this command
         $command = "lp -d " . escapeshellarg($printerName) . " " . escapeshellarg($path);
         // for window use this command
