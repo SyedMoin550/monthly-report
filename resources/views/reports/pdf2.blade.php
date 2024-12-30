@@ -130,7 +130,7 @@
                         <th></th>
                     </tr>
                     <tr>
-                        <td>dsd</td>
+                        <td></td>
                         <td>{{ $report->unit ?? ''}}</td>
                         <td></td>
                         <td></td>
