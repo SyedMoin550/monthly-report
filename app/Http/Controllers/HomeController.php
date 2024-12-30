@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\MonthlyReport;
 use App\Imports\MonthlyReportImport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $reportData = MonthlyReport::latest()->get();
+        $reportData = MonthlyReport::all();
         return view('index', compact('reportData'));
     }
 
@@ -66,6 +67,8 @@ class HomeController extends Controller
             $request->validate([
                 'file' => 'required|file|mimes:xlsx,xls,csv'
             ]);
+            // Empty the MonthlyReport table
+            DB::table('monthly_reports')->truncate();
 
             $import = new MonthlyReportImport; // Update to the correct Import class for MonthlyReport
             Excel::import($import, $request->file('file')->store('files'));
@@ -102,7 +105,7 @@ class HomeController extends Controller
     }
 
 
-    
+
 
 
 

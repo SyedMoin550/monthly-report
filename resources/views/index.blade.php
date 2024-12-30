@@ -109,6 +109,7 @@
                             <th class="text-secondary">Unit Price</th>
                             <th class="text-secondary">Other Charges</th>
                             <th class="text-secondary">Payment Status</th>
+                            <th class="text-secondary">Baverage Of Printer</th>
                             <th class="text-secondary">Action</th>
                         </tr>
                     </thead>
@@ -148,6 +149,7 @@
                                 <td class="align-middle">{{ $data->unit_price ?? 'N/A' }}</td>
                                 <td class="align-middle">{{ $data->other_charges ?? 'N/A' }}</td>
                                 <td class="align-middle">{{ $data->payment_status ?? 'N/A' }}</td>
+                                <td class="align-middle">{{ $data->baverage_of_printer ?? 'N/A' }}</td>
                                 <td class="align-middle">
                                     <div class="">
                                         <a class="btn btn-secondary bg-transparent border-0 text-dark" role="button"

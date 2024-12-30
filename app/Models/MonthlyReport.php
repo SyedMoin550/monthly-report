@@ -37,5 +37,7 @@ class MonthlyReport extends Model
         'treatment_method',
         'disposal_treatment',
         'date_load',
+        'baverage_of_printer',
+
     ];
 }

@@ -124,10 +124,10 @@
 
                 <div class="row">
                     <!-- car_number -->
-                    <div class="col-md-4 mb-3">
+                    {{-- <div class="col-md-4 mb-3">
                         <label for="car_number" class="form-label">Car Number</label>
                         <input type="text" id="car_number" name="car_number" class="form-control" placeholder="Enter Car Number">
-                    </div>
+                    </div> --}}
 
                     <!-- type_of_materials -->
                     <div class="col-md-4 mb-3">

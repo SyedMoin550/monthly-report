@@ -123,11 +123,11 @@
                 </div>
 
                 <div class="row">
-                    <!-- car_number -->
+                    {{-- <!-- car_number -->
                     <div class="col-md-4 mb-3">
                         <label for="car_number" class="form-label">Car Number</label>
                         <input type="text" id="car_number" name="car_number" class="form-control" value="{{ old('car_number', $record->car_number ?? '') }}" placeholder="Enter Car Number">
-                    </div>
+                    </div> --}}
 
                     <!-- type_of_materials -->
                     <div class="col-md-4 mb-3">

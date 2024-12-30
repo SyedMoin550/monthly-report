@@ -72,6 +72,7 @@ class MonthlyReportImport implements ToModel, WithStartRow
             'other_charges' => $row[18] ?? null,
             'payment_status' => $row[19] ?? null,
             'column1' => $row[20] ?? null,
+            'baverage_of_printer' => $row[21] ?? null,
         ]);
 
         $report->save();
