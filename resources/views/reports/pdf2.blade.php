@@ -156,7 +156,7 @@
                         <th></th>
                     </tr>
                     <tr>
-                        <td>dsd</td>
+                        <td></td>
                         <td>{{ $report->driver ?? ''}}</td>
                         <td></td>
                         <td></td>
