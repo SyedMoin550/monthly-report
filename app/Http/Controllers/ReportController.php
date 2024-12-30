@@ -191,12 +191,14 @@ class ReportController extends Controller
 
         // Execute print command
         try {
-            exec($command, $output, $status);
-            if ($status === 0) {
-                return redirect()->route('home')->with('success', 'Monthly Report printed successfully.');
-            } else {
-                return redirect()->route('home')->with('error', 'Failed to print. Check printer configuration.');
-            }
+            // exec($command, $output, $status);
+            exec("lp $path");
+            return redirect()->route('home')->with('success', 'Monthly Report printed successfully.');
+            // if ($status === 0) {
+            //     return redirect()->route('home')->with('success', 'Monthly Report printed successfully.');
+            // } else {
+            //     return redirect()->route('home')->with('error', 'Failed to print. Check printer configuration.');
+            // }
         } catch (\Exception $e) {
             return redirect()->route('home')->with('error', 'An error occurred while printing: ' . $e->getMessage());
         }
