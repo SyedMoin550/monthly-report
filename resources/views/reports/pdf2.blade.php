@@ -31,7 +31,7 @@
         th {
             color: #3c3180;
             font-size: 14px;
-            height: 20px;
+            height: 25px;
             font-weight: 600;
         }
 
@@ -39,14 +39,14 @@
             text-align: left;
             color: #3c3180;
             text-align: center;
-            height: 20px;
+            height: 25px;
             font-size: 14px;
         }
 
         .logo {
             text-align: center;
 
-            height: 70px;
+            height: 65px;
             text-align: center;
             display: flex;
             justify-content: center;
@@ -54,7 +54,7 @@
         }
 
         .logo img {
-            height: 70px;
+            height: 65px;
             max-width: 100px;
         }
 
@@ -62,12 +62,12 @@
             text-align: center;
             display: flex;
             justify-content: center;
-            height: 70px;
+            height: 65px;
             align-items: center;
         }
 
         .logo22 img {
-            height: 70px;
+            height: 65px;
             width: auto;
             max-width: 100%;
             object-fit: contain;
@@ -146,7 +146,7 @@
                         <td colspan="2"></td>
                         <td></td>
                         <td></td>
-                        <td>{{ $report->average_weight ?? ''}}</td>
+                        <td style="margin-top: 10px">{{ $report->average_weight ?? ''}}</td>
                     </tr>
                     <tr>
                         <th></th>
@@ -157,7 +157,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td>{{ $report->driver ?? ''}}</td>
+                        <td style="margin-top: 10px">{{ $report->driver ?? ''}}</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -218,7 +218,7 @@
                                 th {
                                     color: #3c3180;
                                     font-size: 14px;
-                                    height: 20px;
+                                    height: 25px;
                                     font-weight: 600;
                                 }
 
@@ -226,14 +226,14 @@
                                     text-align: left;
                                     color: #3c3180;
                                     text-align: center;
-                                    height: 20px;
+                                    height: 25px;
                                     font-size: 14px;
                                 }
 
                                 .logo {
                                     text-align: center;
 
-                                    height: 70px;
+                                    height: 65px;
                                     text-align: center;
                                     display: flex;
                                     justify-content: center;
@@ -241,7 +241,7 @@
                                 }
 
                                 .logo img {
-                                    height: 70px;
+                                    height: 65px;
                                     max-width: 100px;
                                 }
 
@@ -249,12 +249,12 @@
                                     text-align: center;
                                     display: flex;
                                     justify-content: center;
-                                    height: 70px;
+                                    height: 65px;
                                     align-items: center;
                                 }
 
                                 .logo22 img {
-                                    height: 70px;
+                                    height: 65px;
                                     width: auto;
                                     max-width: 100%;
                                     object-fit: contain;
