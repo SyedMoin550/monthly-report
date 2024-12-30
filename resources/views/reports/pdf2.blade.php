@@ -46,7 +46,7 @@
         .logo {
             text-align: center;
 
-            height: 65px;
+            height: 70px;
             text-align: center;
             display: flex;
             justify-content: center;
@@ -54,7 +54,7 @@
         }
 
         .logo img {
-            height: 65px;
+            height: 70px;
             max-width: 100px;
         }
 
@@ -62,12 +62,12 @@
             text-align: center;
             display: flex;
             justify-content: center;
-            height: 65px;
+            height: 70px;
             align-items: center;
         }
 
         .logo22 img {
-            height: 65px;
+            height: 70px;
             width: auto;
             max-width: 100%;
             object-fit: contain;
@@ -233,7 +233,7 @@
                                 .logo {
                                     text-align: center;
 
-                                    height: 50px;
+                                    height: 70px;
                                     text-align: center;
                                     display: flex;
                                     justify-content: center;
@@ -241,7 +241,7 @@
                                 }
 
                                 .logo img {
-                                    height: 50px;
+                                    height: 70px;
                                     max-width: 100px;
                                 }
 
@@ -249,12 +249,12 @@
                                     text-align: center;
                                     display: flex;
                                     justify-content: center;
-                                    height: 50px;
+                                    height: 70px;
                                     align-items: center;
                                 }
 
                                 .logo22 img {
-                                    height: 50px;
+                                    height: 70px;
                                     width: auto;
                                     max-width: 100%;
                                     object-fit: contain;
