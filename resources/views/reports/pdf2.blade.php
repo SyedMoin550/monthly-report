@@ -31,7 +31,7 @@
         th {
             color: #3c3180;
             font-size: 14px;
-            height: 25px;
+            height: 20px;
             font-weight: 600;
         }
 
@@ -39,7 +39,7 @@
             text-align: left;
             color: #3c3180;
             text-align: center;
-            height: 25px;
+            height: 20px;
             font-size: 14px;
         }
 
@@ -218,7 +218,7 @@
                                 th {
                                     color: #3c3180;
                                     font-size: 14px;
-                                    height: 25px;
+                                    height: 20px;
                                     font-weight: 600;
                                 }
 
@@ -226,7 +226,7 @@
                                     text-align: left;
                                     color: #3c3180;
                                     text-align: center;
-                                    height: 25px;
+                                    height: 20px;
                                     font-size: 14px;
                                 }
 
