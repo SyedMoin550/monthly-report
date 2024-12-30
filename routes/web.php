@@ -18,4 +18,6 @@ Route::resource('reports', ReportController::class);
 
 Route::get('reports/download/invoice/{id}', [ReportController::class, 'downloadPdf'])->name('reports.download');
 
+// Route::get('reports/download/invoice/{id}', [ReportController::class, 'printPdf'])->name('reports.download');
+
 

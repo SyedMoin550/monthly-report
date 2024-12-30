@@ -6,6 +6,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use App\Models\MonthlyReport;
 
+
 class ReportController extends Controller
 {
     /**
@@ -205,48 +206,75 @@ class ReportController extends Controller
     // }
 
 
+    // public function downloadPdf($id)
+    // {
+    //     // Retrieve the report
+    //     $report = MonthlyReport::findOrFail($id);
+
+    //     // Generate the PDF from the Blade view
+    //     $pdf = PDF::loadView('reports.pdf2', compact('report'));
+
+    //     // Ensure the directory exists
+    //     $directoryPath = storage_path('app/public/invoices');
+    //     if (!file_exists($directoryPath)) {
+    //         mkdir($directoryPath, 0755, true);
+    //     }
+
+    //     // Save the PDF to the directory
+    //     $fileName = 'invoice-' . rand(1111, 9999) . '-' . $report->id . '.pdf';
+    //     $filePath = $directoryPath . '/' . $fileName;
+    //     $pdf->save($filePath);
+
+    //     // Printer setup
+    //     $printerName = "EPSON_LQ_350";
+
+    //     // Determine the OS and set the correct command
+    //     if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+    //         // Command for Windows
+    //         $command = "print /d:" . escapeshellarg("\\\\" . gethostname() . "\\" . $printerName) . " " . escapeshellarg($filePath);
+    //     } else {
+    //         // Command for Linux/macOS
+    //         $command = "lp -d " . escapeshellarg($printerName) . " " . escapeshellarg($filePath);
+    //     }
+
+    //     // Execute the print command
+    //     try {
+    //         exec($command, $output, $status);
+
+    //         if ($status === 0) {
+    //             return redirect()->route('home')->with('success', 'Monthly Report printed successfully.');
+    //         } else {
+    //             return redirect()->route('home')->with('error', 'Failed to print. Check printer configuration.');
+    //         }
+    //     } catch (\Exception $e) {
+    //         return redirect()->route('home')->with('error', 'An error occurred while printing: ' . $e->getMessage());
+    //     }
+    // }
+
+
     public function downloadPdf($id)
     {
         // Retrieve the report
         $report = MonthlyReport::findOrFail($id);
 
         // Generate the PDF from the Blade view
-        $pdf = PDF::loadView('reports.pdf2', compact('report'));
+        return view('reports.pdf2', compact('report'));
+    }
 
-        // Ensure the directory exists
-        $directoryPath = storage_path('app/public/invoices');
-        if (!file_exists($directoryPath)) {
-            mkdir($directoryPath, 0755, true);
+
+    public function printPdf($id)
+    {
+        // Fetch the record from the database
+        $report = MonthlyReport::findOrFail($id);
+
+        if (!$report) {
+            return redirect()->back()->with('error', 'Data not found!');
         }
 
-        // Save the PDF to the directory
-        $fileName = 'invoice-' . rand(1111, 9999) . '-' . $report->id . '.pdf';
-        $filePath = $directoryPath . '/' . $fileName;
-        $pdf->save($filePath);
+        // Generate PDF
+        $pdf = Pdf::loadView('reports.pdf2', compact('report'));
 
-        // Printer setup
-        $printerName = "EPSON_LQ_350";
-
-        // Determine the OS and set the correct command
-        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-            // Command for Windows
-            $command = "print /d:" . escapeshellarg("\\\\" . gethostname() . "\\" . $printerName) . " " . escapeshellarg($filePath);
-        } else {
-            // Command for Linux/macOS
-            $command = "lp -d " . escapeshellarg($printerName) . " " . escapeshellarg($filePath);
-        }
-
-        // Execute the print command
-        try {
-            exec($command, $output, $status);
-
-            if ($status === 0) {
-                return redirect()->route('home')->with('success', 'Monthly Report printed successfully.');
-            } else {
-                return redirect()->route('home')->with('error', 'Failed to print. Check printer configuration.');
-            }
-        } catch (\Exception $e) {
-            return redirect()->route('home')->with('error', 'An error occurred while printing: ' . $e->getMessage());
-        }
+        // Return the PDF for download or display
+        return $pdf->stream('report.pdf');
     }
 }

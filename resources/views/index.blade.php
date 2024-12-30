@@ -158,7 +158,7 @@
                                     <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
 
                                         <a class="dropdown-item"
-                                            href="{{ route('reports.download', $data->id) }}">
+                                            href="{{ route('reports.download', $data->id) }}" target="_blank">
                                             <img src="{{ asset('assets/dasheets/img/menu.svg') }}" class="img-fluid me-1" alt="" />
                                             Print
                                         </a>

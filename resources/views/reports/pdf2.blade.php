@@ -7,6 +7,7 @@
     <title>Invoice PDF Generator</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: "Open Sans", serif;
@@ -100,20 +101,24 @@
 </head>
 
 <body>
+    <a href="#" class="btn pdf rounded-3 mt-2" id="print-invoice" style="visibility: hidden">print <i
+        class="bi bi-file-earmark"></i>
+    </a>
 
-    <div class="invoice-container">
+    <div class="invoice-container" id="invoice-container">
         <div style="overflow-x: auto">
             <table>
                 <tbody>
                     <tr>
                         <td colspan="1">
                             <div class="logo">
-                                <img src="{{public_path('assets/image/logo/logo.webp')}}" alt="Company Logo" />
+                                {{-- <img src="{{public_path('assets/image/logo/logo.webp')}}" alt="Company Logo" /> --}}
+                                <img src="{{asset('assets/image/logo/logo.webp')}}" alt="Company Logo" />
                             </div>
                         </td>
                         <td colspan="4">
                             <div class="logo22">
-                                <img src="{{public_path('assets/image/logo/logov2.webp')}}" alt="Company Logo" />
+                                <img src="{{asset('assets/image/logo/logov2.webp')}}" alt="Company Logo" />
                             </div>
                         </td>
                     </tr>
@@ -211,6 +216,129 @@
             </p>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#print-invoice').click(function() {
+                var printContents = document.getElementById('invoice-container').innerHTML;
+
+                // Open a new window for printing
+                var printWindow = window.open('', '', 'height=600,width=800');
+
+                printWindow.document.write(`
+                    <html>
+                        <head>
+                            <title>Print Invoice</title>
+                            <style>
+                                body {
+                                    font-family: "Open Sans", serif;
+                                    margin: 0;
+                                    padding: 0;
+                                }
+
+                                .invoice-container {
+                                    max-width: 1100px;
+                                    width: 100%;
+                                    margin: auto;
+                                }
+
+                                table {
+                                    width: 100%;
+                                    border-collapse: collapse;
+                                    margin-bottom: 20px;
+                                    border: 3px solid #3c3180;
+                                }
+
+                                th,
+                                td {
+                                    border: 1px solid #3c3180;
+                                }
+
+                                th,
+                                td {
+                                    padding: 10px;
+                                    text-align: left;
+                                    color: #3c3180;
+                                    text-align: center;
+                                }
+
+                                .text-right {
+                                    text-align: right;
+                                }
+
+                                .text-center {
+                                    text-align: center;
+                                }
+
+                                input {
+                                    width: 90%;
+                                    padding: 0 10px;
+                                    border: 0;
+                                    outline: 0;
+                                    box-shadow: none;
+                                }
+
+                                .logo {
+                                    text-align: center;
+
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+
+                                .logo img {
+                                    max-width: 100px;
+                                }
+
+                                .logo22 {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+
+                                .logo22 img {
+                                    height: 100px;
+                                    width: auto;
+                                    max-width: 100%;
+                                    object-fit: contain;
+                                }
+
+                                th {
+                                    background: #f1f0f7;
+                                }
+
+                                .Footer_heading p {
+                                    color: #3c3180;
+                                    font-size: 16px;
+                                    font-weight: 600;
+                                    text-align: center;
+                                }
+                            </style>
+
+                        </head>
+                        <body>
+                            ${printContents}
+                        </body>
+                    </html>
+                `);
+
+                // Close the document to ensure the content is loaded
+                printWindow.document.close();
+
+                // Print the content
+                printWindow.print();
+
+                // Close the window after printing (optional)
+                printWindow.onafterprint = function () {
+                    printWindow.close();
+                };
+            });
+
+            $('#print-invoice').trigger('click');
+        });
+    </script>
 </body>
 
 </html>
