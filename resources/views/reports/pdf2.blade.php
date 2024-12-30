@@ -163,15 +163,15 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <th colspan="5">Remarks/Comments</th>
+                        <th colspan="5"></th>
                     </tr>
                     <tr>
                         <td colspan="5"></td>
                     </tr>
                     <tr>
-                        <th>Operator Code</th>
-                        <th colspan="2">Weighbridge Operator</th>
-                        <th colspan="2">Operator Signature</th>
+                        <th></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
                     </tr>
                     <tr>
                         <td></td>
