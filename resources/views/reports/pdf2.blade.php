@@ -71,7 +71,6 @@
             width: auto;
             max-width: 100%;
             object-fit: contain;
-            
         }
     </style>
 
@@ -118,7 +117,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td></td>
+                        <td>{{$report->waste_type ?? ''}}</td>
                         <td>{{ \Carbon\Carbon::parse($report->time_in)->format('h:i A') ?? ''}}</td>
                         <td>{{ \Carbon\Carbon::parse($report->time_out)->format('h:i A') ?? ''}}</td>
                         <td>{{ $report->maximum_weight ?? ''}}</td>
@@ -134,7 +133,7 @@
                         <td></td>
                         <td>{{ $report->unit ?? ''}}</td>
                         <td></td>
-                        <td></td>
+                        <td>{{$report->truck ?? ''}}</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -176,7 +175,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td colspan="2"></td>
+                        <td colspan="2">{{$report->baverage_of_printer ?? ''}}</td>
                         <td colspan="2"></td>
                     </tr>
                     <!-- Add more rows as needed -->
