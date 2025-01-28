@@ -146,7 +146,7 @@
                         <td colspan="2"></td>
                         <td></td>
                         <td></td>
-                        <td style="margin-top: 10px">{{ $report->average_weight ?? ''}}</td>
+                        <td >{{ $report->average_weight ?? ''}}</td>
                     </tr>
                     <tr>
                         <th></th>
@@ -157,7 +157,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td style="margin-top: 10px">{{ $report->driver ?? ''}}</td>
+                        <td >{{ $report->driver ?? ''}}</td>
                         <td></td>
                         <td></td>
                         <td></td>
